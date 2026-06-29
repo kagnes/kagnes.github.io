@@ -1,0 +1,21 @@
+# Navigation Links
+#   To link a homepage widget, specify the URL as a hash `#` followed by the filename of the
+#     desired widget in your `content/home/` folder.
+#   The weight parameter defines the order that the links will appear in.
+
+main:
+  - name: Főoldal
+    url: '#about'
+    weight: 10
+  - name: Publikációk
+    url: '#publications'
+    weight: 20
+  - name: Előadások
+    url: '#presentations'
+    weight: 30
+  - name: Adatcsomagok
+    url: '#datasets'
+    weight: 40
+  - name: Korpuszok
+    url: '#corpora'
+    weight: 50

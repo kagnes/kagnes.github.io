@@ -1,0 +1,12 @@
+# Font style metadata
+name = "Macondo"
+
+# Optional Google font URL
+google_fonts = "family=Macondo"
+
+# Font families
+heading_font = "Macondo"
+body_font = "Macondo"
+nav_font = "Macondo"
+mono_font = "Macondo"
+
