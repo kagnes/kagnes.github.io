@@ -1,3 +1,7 @@
+#!/bin/bash
+
+mkdir -p .github/workflows
+cat > .github/workflows/deploy.yml << 'EOF'
 name: Deploy Hugo site to Pages
 
 on:
@@ -18,7 +22,7 @@ jobs:
   build:
     runs-on: ubuntu-latest
     env:
-      HUGO_VERSION: 0.97.3
+      HUGO_VERSION: 0.142.0
     steps:
       - name: Install Hugo CLI
         run: |
@@ -51,3 +55,4 @@ jobs:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
+EOF
