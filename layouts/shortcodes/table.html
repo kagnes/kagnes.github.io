@@ -1,0 +1,19 @@
+{{/* Project override of the abandoned theme's `table` shortcode.
+     The theme used getCSV, removed in Hugo v0.143.0. This version
+     uses the modern resources + transform.Unmarshal API. */}}
+{{ $path := .Get "path" }}
+{{ $header := .Get "header" }}
+{{ $caption := .Get "caption" }}
+{{ with .Page.Resources.GetMatch $path }}
+  {{ $data := . | transform.Unmarshal (dict "delimiter" ",") }}
+  <table>
+    {{ with $caption }}<caption>{{ . }}</caption>{{ end }}
+    {{ range $i, $row := $data }}
+      {{ if and (ne $header "false") (eq $i 0) }}
+        <thead><tr>{{ range $row }}<th>{{ . }}</th>{{ end }}</tr></thead>
+      {{ else }}
+        <tr>{{ range $row }}<td>{{ . }}</td>{{ end }}</tr>
+      {{ end }}
+    {{ end }}
+  </table>
+{{ end }}
